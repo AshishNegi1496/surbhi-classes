@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16 px-8">
+      <section id="hero" className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16 px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Excellence in Education
@@ -28,26 +28,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 px-8 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <StatsCard number="15+" label="Years Experience" />
-          <StatsCard number="500+" label="Students Taught" />
-          <StatsCard number="98%" label="Success Rate" />
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      {/* About Section */}
+      <section id="about" className="py-12 px-8 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Why Choose Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card
-                key={index}
-                title={feature.title}
-                icon={feature.icon}
-              >
+              <Card key={index} title={feature.title} icon={feature.icon}>
                 {feature.description}
               </Card>
             ))}
@@ -56,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* Classes Section */}
-      <section className="py-16 px-8 bg-white">
+      <section id="classes" className="py-16 px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Classes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 px-8 bg-gray-50">
+      <section id="testimonials" className="py-16 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">What Parents Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -80,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-8 bg-white">
+      <section id="contact" className="py-16 px-8 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Get in Touch</h2>
           <ContactForm />
@@ -93,21 +80,9 @@ export default function Home() {
 }
 
 const features = [
-  {
-    icon: "👩‍🏫",
-    title: "Expert Teachers",
-    description: "Learn from experienced educators passionate about teaching"
-  },
-  {
-    icon: "👥",
-    title: "Small Batches",
-    description: "Personal attention with maximum 15 students per batch"
-  },
-  {
-    icon: "📚",
-    title: "Structured Learning",
-    description: "Well-planned curriculum aligned with board standards"
-  }
+  { icon: "👩‍🏫", title: "Expert Teachers", description: "Learn from experienced educators passionate about teaching" },
+  { icon: "👥", title: "Small Batches", description: "Personal attention with maximum 15 students per batch" },
+  { icon: "📚", title: "Structured Learning", description: "Well-planned curriculum aligned with board standards" }
 ];
 
 const classes = [
@@ -138,22 +113,7 @@ const classes = [
 ];
 
 const testimonials = [
-  {
-    quote: "My daughter's grades improved significantly after joining Surabhi Classes.",
-    name: "Priya Singh",
-    details: "Parent of Grade 9 Student",
-    subject: "Mathematics"
-  },
-  {
-    quote: "The teachers are very patient and explain concepts thoroughly.",
-    name: "Rahul Kumar",
-    details: "Parent of Grade 8 Student",
-    subject: "Science"
-  },
-  {
-    quote: "Best coaching institute in the area. Highly recommended!",
-    name: "Sneha Patel",
-    details: "Parent of Grade 10 Student",
-    subject: "English"
-  }
+  { quote: "My daughter's grades improved significantly after joining Surabhi Classes.", name: "Priya Singh", details: "Parent of Grade 9 Student", subject: "Mathematics" },
+  { quote: "The teachers are very patient and explain concepts thoroughly.", name: "Rahul Kumar", details: "Parent of Grade 8 Student", subject: "Science" },
+  { quote: "Best coaching institute in the area. Highly recommended!", name: "Sneha Patel", details: "Parent of Grade 10 Student", subject: "English" }
 ];

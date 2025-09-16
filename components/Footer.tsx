@@ -10,6 +10,8 @@ const footerLinks = {
     { label: 'Mathematics', href: '/classes/math' },
     { label: 'Science', href: '/classes/science' },
     { label: 'English', href: '/classes/english' },
+      { label: 'Hindi', href: '/classes/Hindi' },
+    { label: 'Sanskrit', href: '/classes/Sanskrit' },
   ],
   support: [
     { label: 'Contact Us', href: '/contact' },
