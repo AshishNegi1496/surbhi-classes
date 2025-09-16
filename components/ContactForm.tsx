@@ -2,7 +2,7 @@
 
 
 import { useState, FormEvent } from 'react';
-import { Button } from './Button';
+import  Button  from './Button';
 
 interface FormData {
   name: string;
@@ -12,7 +12,11 @@ interface FormData {
   message: string;
 }
 
-export const ContactForm = () => {
+interface ContactFormProps {
+  className?: string;
+}
+
+export const ContactForm = ({ className = '' }: ContactFormProps)  => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',

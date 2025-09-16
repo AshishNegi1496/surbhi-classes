@@ -1,33 +1,22 @@
 'use client'
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
-  children: React.ReactNode;
-  onClick?: () => void;
   className?: string;
-  type?: 'button' | 'submit';
 }
 
-export const Button = ({ 
-  variant = 'primary', 
-  children, 
-  onClick, 
-  className = '',
-  type = 'button' 
-}: ButtonProps) => {
-  const baseStyles = "px-6 py-3 rounded-md font-medium transition-colors";
-  const variantStyles = {
+const Button = ({ children, variant = 'primary', className = '', ...props }: ButtonProps) => {
+  const base = "px-6 py-3 rounded-lg font-semibold transition-all";
+  const variants = {
     primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-white text-blue-600 border border-blue-600 hover:bg-blue-50"
+    secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300"
   };
 
   return (
-    <button 
-      type={type}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-      onClick={onClick}
-    >
+    <button className={`${base} ${variants[variant]} ${className}`} {...props}>
       {children}
     </button>
   );
 };
+
+export default Button;
