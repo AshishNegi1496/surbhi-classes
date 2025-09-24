@@ -1,24 +1,24 @@
 import Link from 'next/link';
 
-const footerLinks = {
-  company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Our Team', href: '/team' },
-    { label: 'Careers', href: '/careers' },
-  ],
-  classes: [
-    { label: 'Mathematics', href: '/classes/math' },
-    { label: 'Science', href: '/classes/science' },
-    { label: 'English', href: '/classes/english' },
-      { label: 'Hindi', href: '/classes/Hindi' },
-    { label: 'Sanskrit', href: '/classes/Sanskrit' },
-  ],
-  support: [
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Privacy Policy', href: '/privacy' },
-  ]
-};
+// const footerLinks = {
+//   company: [
+//     { label: 'About Us', href: '/about' },
+//     { label: 'Our Team', href: '/team' },
+//     { label: 'Careers', href: '/careers' },
+//   ],
+//   classes: [
+//     { label: 'Mathematics', href: '/classes/math' },
+//     { label: 'Science', href: '/classes/science' },
+//     { label: 'English', href: '/classes/english' },
+//       { label: 'Hindi', href: '/classes/Hindi' },
+//     { label: 'Sanskrit', href: '/classes/Sanskrit' },
+//   ],
+//   support: [
+//     { label: 'Contact Us', href: '/contact' },
+//     { label: 'FAQ', href: '/faq' },
+//     { label: 'Privacy Policy', href: '/privacy' },
+//   ]
+// };
 
 export const Footer = () => {
   return (
@@ -34,7 +34,7 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
+          {/* {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
               <h3 className="text-lg font-semibold mb-4 capitalize">{title}</h3>
               <ul className="space-y-2">
@@ -50,7 +50,7 @@ export const Footer = () => {
                 ))}
               </ul>
             </div>
-          ))}
+          ))} */}
         </div>
 
         {/* Bottom Section */}

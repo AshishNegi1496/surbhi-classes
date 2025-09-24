@@ -20,16 +20,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm py-4 px-8 z-50">
+    <nav className="sticky top-0 bg-black/50 backdrop-blur-md shadow-sm py-4 px-8 z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-blue-800">Surabhi Classes</h1>
+        <h1 className="text-2xl font-bold text-white">Surabhi Classes</h1>
 
         <div className="hidden md:flex space-x-8">
           {navLinks.map(link => (
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className=" text-gray-100 hover:text-gray-50 transition-colors"
             >
               {link.label}
             </button>
@@ -50,7 +50,7 @@ const Navbar = () => {
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="block w-full text-left px-8 py-4 text-gray-700 hover:bg-gray-50"
+              className="block w-full text-left px-8 py-4 text-gray-100 hover:bg-gray-50"
             >
               {link.label}
             </button>
