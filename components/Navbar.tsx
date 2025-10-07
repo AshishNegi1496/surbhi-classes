@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-black/50 backdrop-blur-md shadow-sm py-4 px-8 z-50">
+    <nav className="sticky top-0 bg-blue-800/50 backdrop-blur-md shadow-sm py-4 px-8 z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white">Surabhi Classes</h1>
 

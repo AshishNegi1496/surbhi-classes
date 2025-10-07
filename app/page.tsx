@@ -1,16 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import Navbar  from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import  Button  from '../components/Button';
 import  Card  from '../components/Card';
 import ClassCard  from '../components/ClassCard';
-import  StatsCard  from '../components/StatsCard';
 import TestimonialCard  from '../components/TestimonialCard';
 import { ContactForm } from '../components/ContactForm';
-import { motion } from 'framer-motion';
-
+import { motion, AnimatePresence  } from 'framer-motion';
+import { FaUserTie, FaEnvelope, FaPhoneAlt, FaBriefcase } from 'react-icons/fa';
 export default function Home() {
+
+   const [showContact, setShowContact] = useState(false);
   return (
     <div className="font-sans min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Navbar />
@@ -101,15 +103,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 px-8 bg-white">
-        <div className="max-w-3xl mx-auto">
+            {/* Tutor Section */}
+      <section id="tutor" className="py-24 px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+            Meet Your Tutor
+          </h2>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-8 border border-gray-100 hover:shadow-2xl transition-all"
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <FaUserTie className="text-5xl text-blue-600" />
+              <h3 className="text-3xl font-semibold text-gray-800">Surabhi Jain</h3>
+              <p className="text-gray-500">Expert Educator & Mentor</p>
+
+              <div className="mt-4 space-y-2 text-gray-700">
+                <p className="flex items-center justify-center gap-2">
+                  <FaBriefcase className="text-blue-500" /> 13 Years Experience
+                </p>
+                <p className="flex items-center justify-center gap-2">
+                  <FaEnvelope className="text-blue-500" /> jainsurabhi811@gmail.com
+                </p>
+                <p className="flex items-center justify-center gap-2">
+                  <FaPhoneAlt className="text-blue-500" /> +91 99819 50909
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 px-8 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
             Get in Touch
           </h2>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}>
-            <ContactForm className="bg-white shadow-xl rounded-2xl p-8" />
-          </motion.div>
+          <Button
+            variant="primary"
+            className="mx-auto hover:scale-105 transition-transform"
+            onClick={() => setShowContact(!showContact)}
+          >
+            {showContact ? 'Hide Contact Form' : 'Show Contact Form'}
+          </Button>
+
+          <AnimatePresence>
+            {showContact && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4 }}
+                className="overflow-hidden mt-8"
+              >
+                <ContactForm />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 
