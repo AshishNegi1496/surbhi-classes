@@ -22,10 +22,10 @@ export function ContactForm() {
     console.log("Form submitted:", formData);
 
     try {
-      // ✅ Send email to your inbox (ashishnegi196@gmail.com)
+      //  to your inbox (ashishnegi196@gmail.com)
       const result = await emailjs.send(
-        "service_80dw4rd", // ⚡ Replace with your EmailJS service ID
-        "template_bmd14yo", // ⚡ Replace with your EmailJS template ID
+        "service_80dw4rd", // EmailJS service ID
+        "template_bmd14yo", // EmailJS template ID
         {
           to_email: "ashishnegi1496@gmail.com", // 👈 Force recipient
           from_name: formData.name,

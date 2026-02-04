@@ -138,7 +138,7 @@ export default function Home() {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-8 bg-gradient-to-b from-gray-50 to-white">
+      <section id="contact" className="py-24 px-8 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
             Get in Touch
